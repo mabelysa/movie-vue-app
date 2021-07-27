@@ -15,7 +15,23 @@
       </div>
       <div>
         <label>Plot:</label>
-        <input type="text" v-model="newMovieParams.plot" />
+        <textarea type="text" v-model="newMovieParams.plot"></textarea>
+      </div>
+      <div>
+        <label for="director">Director:</label>
+        <input id="director" type="text" name="directorname" v-model="newMovieParams.director" />
+      </div>
+      <div>
+        <label for="english">English Movie?</label>
+        <input
+          id="english"
+          type="checkbox"
+          name="englishmovie"
+          select
+          v-model="newMovieParams.english"
+          true-value="yes"
+          false-value="no"
+        />
       </div>
       <input type="submit" value="Submit" />
     </form>

@@ -25,7 +25,7 @@ export default {
   },
   methods: {
     indexMovies: function () {
-      axios.get("http://localhost:3000/movie").then((response) => {
+      axios.get("http://localhost:3000/movies").then((response) => {
         this.movies = response.data;
         console.log("All Movies:", this.movies);
       });
@@ -40,7 +40,7 @@ export default {
         director: "Bob Spiers",
       };
       axios
-        .post("http://localhost:3000/movie", params)
+        .post("http://localhost:3000/movies", params)
         .then((response) => {
           console.log("Success!", response.data);
           this.movies.push(response.data);

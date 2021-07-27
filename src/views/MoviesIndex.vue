@@ -4,8 +4,11 @@
       <router-link v-bind:to="`/movies/${movie.id}`">
         <h2>Title: {{ movie.title }}</h2>
       </router-link>
-      <p>Year: {{ movie.chef }}</p>
+      <p>Year: {{ movie.year }}</p>
       <p>Plot: {{ movie.plot }}</p>
+      <!-- <p>All Info: {{ movie }}</p> -->
+      <p>Director: {{ movie.director }}</p>
+      <p>English: {{ movie.english }}</p>
     </div>
   </div>
 </template>
