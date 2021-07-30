@@ -1,6 +1,8 @@
 <template>
   <div class="movies-index">
-    <div v-for="movie in movies" :key="movie.id">
+    Search for a Movie:
+    <input v-model="titleFilter" />
+    <div v-for="movie in filterBy(movies, titleFilter, 'title')" :key="movie.id">
       <router-link v-bind:to="`/movies/${movie.id}`">
         <h2>Title: {{ movie.title }}</h2>
       </router-link>
@@ -15,13 +17,17 @@
 
 <script>
 import axios from "axios";
+import Vue2Filters from "vue2-filters";
+
 export default {
   data: function () {
     return {
       message: "Here are all movies!",
       movies: [],
+      titleFilter: "",
     };
   },
+  mixins: [Vue2Filters.mixin],
   created: function () {
     this.indexMovies();
   },
