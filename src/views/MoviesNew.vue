@@ -15,7 +15,10 @@
       </div>
       <div>
         <label>Plot:</label>
-        <textarea type="text" v-model="newMovieParams.plot"></textarea>
+        <textarea id="plot" type="text" v-model="newMovieParams.plot"></textarea>
+        <small v-if="newMovieParams.plot.length > 50 && newMovieParams.plot.length < 100" class="text-danger">
+          There are {{ 100 - newPostParams.plot.length }} characters remaining.
+        </small>
       </div>
       <div>
         <label for="director">Director:</label>
@@ -44,7 +47,7 @@ export default {
   data: function () {
     return {
       errors: [],
-      newMovieParams: {},
+      newMovieParams: { plot: "" },
     };
   },
   methods: {

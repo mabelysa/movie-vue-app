@@ -39,7 +39,7 @@
                   href="#"
                   id="navbarDropdownMenuLink"
                   role="button"
-                  data-bs-toggle="dropdown"
+                  data-toggle="dropdown"
                   aria-haspopup="true"
                   aria-expanded="false"
                 >
