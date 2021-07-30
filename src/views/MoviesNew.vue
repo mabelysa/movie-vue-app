@@ -17,7 +17,7 @@
         <label>Plot:</label>
         <textarea id="plot" type="text" v-model="newMovieParams.plot"></textarea>
         <small v-if="newMovieParams.plot.length > 50 && newMovieParams.plot.length < 100" class="text-danger">
-          There are {{ 100 - newPostParams.plot.length }} characters remaining.
+          There are {{ 100 - newMovieParams.plot.length }} characters remaining.
         </small>
       </div>
       <div>

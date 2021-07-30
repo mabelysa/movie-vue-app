@@ -23,13 +23,13 @@
               <li class="nav-item">
                 <a class="nav-link" href="/about">About</a>
               </li>
-              <li class="nav-item">
+              <li v-if="!isLoggedIn()" class="nav-item">
                 <a class="nav-link" href="/signup">Signup</a>
               </li>
-              <li class="nav-item">
+              <li v-if="!isLoggedIn()" class="nav-item">
                 <a class="nav-link" href="/login">Login</a>
               </li>
-              <li class="nav-item">
+              <li v-if="isLoggedIn()" class="nav-item">
                 <a class="nav-link" href="/logout">Logout</a>
               </li>
 
@@ -86,3 +86,12 @@ body {
   text-align: center;
 }
 </style>
+<script>
+export default {
+  methods: {
+    isLoggedIn: function () {
+      return localStorage.getItem("jwt");
+    },
+  },
+};
+</script>
