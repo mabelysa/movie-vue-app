@@ -25,15 +25,13 @@
         <input id="director" type="text" name="directorname" v-model="newMovieParams.director" />
       </div>
       <div>
-        <label for="english">English Movie?</label>
+        <label for="checkbox">English Movie?</label>
         <input
-          id="english"
+          id="checkbox"
           type="checkbox"
           name="englishmovie"
           select
           v-model="newMovieParams.english"
-          true-value="yes"
-          false-value="no"
         />
       </div>
       <input type="submit" value="Submit" />
@@ -53,6 +51,8 @@ export default {
   methods: {
     createMovie: function () {
       console.log("Creating that movie!");
+      // var params = {
+      //   language: this.language,
       axios.post("/movies", this.newMovieParams).then((response) => {
         this.$router.push("/movies");
         console.log(response.data);

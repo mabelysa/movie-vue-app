@@ -19,6 +19,7 @@
       </div>
       <input type="submit" value="Submit" />
       <button v-on:click="destroyMovie()">Delete</button>
+      <router-link to="/movies">Back to all Movies!</router-link>
     </form>
   </div>
 </template>
